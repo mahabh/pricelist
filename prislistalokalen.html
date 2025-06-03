@@ -3,73 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <title>Prislista</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: system-ui, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f2f4f7;
-      color: #333;
+      background-color: #f0f2f5;
+      color: #222;
     }
 
     header {
       background-color: #007B83;
       color: white;
-      padding: 20px 0;
       text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 12px 8px;
     }
 
     h1 {
       margin: 0;
-      font-size: 2.2em;
+      font-size: 1.6rem;
     }
 
     .section {
-      max-width: 800px;
-      margin: 40px auto;
-      background-color: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      padding: 20px;
+      max-width: 600px;
+      margin: 12px auto;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 10px 12px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
     }
 
     .section h2 {
-      margin-top: 0;
-      font-size: 1.5em;
-      border-bottom: 2px solid #007B83;
-      padding-bottom: 8px;
+      margin: 0 0 6px 0;
+      font-size: 1.1rem;
       color: #007B83;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 4px;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 15px;
+      font-size: 0.95rem;
     }
 
     td {
-      padding: 10px;
-      border-bottom: 1px solid #ddd;
+      padding: 6px 4px;
+      border-bottom: 1px solid #eee;
     }
 
     td:last-child {
       text-align: right;
-      font-weight: bold;
+      white-space: nowrap;
+      font-weight: 500;
     }
 
-    @media (max-width: 600px) {
-      .section {
-        margin: 20px;
-        padding: 15px;
-      }
-
+    @media (max-width: 400px) {
       h1 {
-        font-size: 1.6em;
+        font-size: 1.4rem;
       }
 
-      .section h2 {
-        font-size: 1.2em;
+      .section {
+        margin: 8px;
+        padding: 8px;
+      }
+
+      table, td {
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -82,10 +83,10 @@
   <div class="section">
     <h2>Chips</h2>
     <table>
-      <tr><td>Alzzavak Tad: crispy corn chips</td><td>10kr</td></tr>
+      <tr><td>Alzzavak Tad</td><td>10kr</td></tr>
       <tr><td>Popcorn Cheddar</td><td></td></tr>
-      <tr><td>Rustika chips: ranch och chili</td><td>15kr</td></tr>
-      <tr><td>Skruvar och ringar</td><td>15kr</td></tr>
+      <tr><td>Rustika: ranch & chili</td><td>15kr</td></tr>
+      <tr><td>Skruvar & ringar</td><td>15kr</td></tr>
       <tr><td>Patos Rolls</td><td>15kr</td></tr>
     </table>
   </div>
@@ -131,7 +132,7 @@
       <tr><td>Biscuits</td><td>8kr</td></tr>
       <tr><td>Peanuts</td><td>8kr</td></tr>
       <tr><td>Unica</td><td>8kr</td></tr>
-      <tr><td>Balconi choklad ?</td><td>5kr</td></tr>
+      <tr><td>Balconi choklad</td><td>5kr</td></tr>
     </table>
   </div>
 
