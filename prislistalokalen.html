@@ -744,8 +744,8 @@
       }
     });
 
-    document.getElementById('totalDisplay').textContent = `Total: ${total}kr`;
-    document.getElementById('summaryDisplay').textContent = summaryLines.join('\n') || '';
+    document.getElementById('totalDisplay').textContent = `Totalt: ${total}kr`;
+    document.getElementById('summaryDisplay').textContent = summaryLines.join('\n') || 'Inga valda produkter.';
 
     // ✅ Update the Swish link dynamically
     const checkoutLink = document.getElementById('checkoutLink');
