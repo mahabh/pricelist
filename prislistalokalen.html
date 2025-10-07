@@ -161,6 +161,45 @@
         min-width: 20px;
         font-size: 0.9rem;
       }
+
+      .tabs {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 4px;
+        background-color: #ffffff;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .tab-button {
+        background-color: #007B83;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: background-color 0.2s;
+      }
+
+      .tab-button:hover {
+        background-color: #005f66;
+      }
+
+      .tab-button.active {
+        background-color: #004f55;
+      }
+
+      .tab-content {
+        display: none;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
     }
   </style>
 </head>
@@ -170,496 +209,528 @@
     <h1>Prislista</h1>
   </header>
 
+  <!-- TABS NAVIGATION -->
+  <div class="tabs">
+    <button class="tab-button active" data-tab="chips">Chips</button>
+    <button class="tab-button" data-tab="snacks">Snacks</button>
+    <button class="tab-button" data-tab="dryck">Dryck</button>
+    <button class="tab-button" data-tab="frukt">Frukt</button>
+    <button class="tab-button" data-tab="choklad">Choklad</button>
+    <button class="tab-button" data-tab="godis">Godis</button>
+    <button class="tab-button" data-tab="frys">Frys</button>
+  </div>
+
+
   <!-- CHIPS -->
-  <div class="section">
-    <h2>Chips</h2>
-    <table>
-      <tr class="clickable" data-name="Alzzavak Tad" data-price="10">
-        <td><img src="./bilder/alzawak.avif" alt="Alzzavak Tad" class="item-img">Alzzavak Tad</td>
-        <td>10kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Popcorn Cheddar" data-price="15">
-        <td><img src="./bilder/7310532160466estrellapopcorncheddar90g-765x1024.png" alt="Popcorn Cheddar"
-            class="item-img">Popcorn Cheddar</td>
-        <td>15kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Rustika Chips" data-price="15">
-        <td><img src="./bilder/rustika.avif" alt="Rustika Chips" class="item-img">Rustika chips: ranch och chili</td>
-        <td>15kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Skruvar och ringar" data-price="15">
-        <td><img src="./bilder/skruvar.avif" alt="Skruvar och ringar" class="item-img">Skruvar och ringar</td>
-        <td>15kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Patos Rolls" data-price="15">
-        <td><img src="./bilder/patos.jpeg" alt="Patos Rolls" class="item-img">Patos Rolls</td>
-        <td>15kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-    </table>
+  <div class="tab-content" id="chips">
+
+    <div class="section">
+      <h2>Chips</h2>
+      <table>
+        <tr class="clickable" data-name="Alzzavak Tad" data-price="10">
+          <td><img src="./bilder/alzawak.avif" alt="Alzzavak Tad" class="item-img">Alzzavak Tad</td>
+          <td>10kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Popcorn Cheddar" data-price="15">
+          <td><img src="./bilder/7310532160466estrellapopcorncheddar90g-765x1024.png" alt="Popcorn Cheddar"
+              class="item-img">Popcorn Cheddar</td>
+          <td>15kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Rustika Chips" data-price="15">
+          <td><img src="./bilder/rustika.avif" alt="Rustika Chips" class="item-img">Rustika chips: ranch och chili</td>
+          <td>15kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Skruvar och ringar" data-price="15">
+          <td><img src="./bilder/skruvar.avif" alt="Skruvar och ringar" class="item-img">Skruvar och ringar</td>
+          <td>15kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Patos Rolls" data-price="15">
+          <td><img src="./bilder/patos.jpeg" alt="Patos Rolls" class="item-img">Patos Rolls</td>
+          <td>15kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
 
 
   <!-- SNACKS -->
-  <div class="section">
-    <h2>Snacks</h2>
-    <table>
-      <tr class="clickable" data-name="Snabbnudlar" data-price="15">
-        <td><img src="./bilder/snabbnudlar.webp" class="item-img">Snabbnudlar</td>
-        <td>15kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Wasa Sandwich" data-price="7">
-        <td><img src="./bilder/wasa.jpg" class="item-img">Wasa Sandwich</td>
-        <td>7kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Mogyi Nötter" data-price="10">
-        <td><img src="./bilder/jalanotter.jpg" class="item-img">Mogyi Nötter</td>
-        <td>10kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Ranch Snack" data-price="15">
-        <td><img src="./bilder/ranchsnack.jpeg" class="item-img">Ranch Snack</td>
-        <td>15kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Corny" data-price="10">
-        <td><img src="./bilder/corny.png" class="item-img" style="transform: rotate(90deg);">Corny</td>
-        <td>10kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Croissant" data-price="10">
-        <td><img src="./bilder/cross.jpeg" class="item-img">Croissant</td>
-        <td>10kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Croissant" data-price="10">
-        <td><img src="./bilder/cross1.jpeg" class="item-img">Croissant</td>
-        <td>10kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Cookies" data-price="5">
-        <td><img src="./bilder/creamcookies.webp" class="item-img">Cookies</td>
-        <td>5kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Fig bar" data-price="5">
-        <td><img src="./bilder/figbar.png" class="item-img">Fig bar</td>
-        <td>5kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Date bar" data-price="5">
-        <td><img src="./bilder/datebar.jpg" class="item-img">Date bar</td>
-        <td>5kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Date maamoul" data-price="3">
-        <td><img src="./bilder/tamer.jpeg" class="item-img">Date maamoul</td>
-        <td>3kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Dark chocolate" data-price="5">
-        <td><img src="./bilder/saida.png" class="item-img">Dark chocolate</td>
-        <td>5kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Forever" data-price="5">
-        <td><img src="./bilder/saida1.png" class="item-img">Forever</td>
-        <td>5kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Sesame plus" data-price="5">
-        <td><img src="./bilder/sesame.jpg" class="item-img">Sesame plus</td>
-        <td>5kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-    </table>
+  <div class="tab-content" id="snacks">
+
+    <div class="section">
+      <h2>Snacks</h2>
+      <table>
+        <tr class="clickable" data-name="Snabbnudlar" data-price="15">
+          <td><img src="./bilder/snabbnudlar.webp" class="item-img">Snabbnudlar</td>
+          <td>15kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Wasa Sandwich" data-price="7">
+          <td><img src="./bilder/wasa.jpg" class="item-img">Wasa Sandwich</td>
+          <td>7kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Mogyi Nötter" data-price="10">
+          <td><img src="./bilder/jalanotter.jpg" class="item-img">Mogyi Nötter</td>
+          <td>10kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Ranch Snack" data-price="15">
+          <td><img src="./bilder/ranchsnack.jpeg" class="item-img">Ranch Snack</td>
+          <td>15kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Corny" data-price="10">
+          <td><img src="./bilder/corny.png" class="item-img" style="transform: rotate(90deg);">Corny</td>
+          <td>10kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Croissant" data-price="10">
+          <td><img src="./bilder/cross.jpeg" class="item-img">Croissant</td>
+          <td>10kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Croissant" data-price="10">
+          <td><img src="./bilder/cross1.jpeg" class="item-img">Croissant</td>
+          <td>10kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Cookies" data-price="5">
+          <td><img src="./bilder/creamcookies.webp" class="item-img">Cookies</td>
+          <td>5kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Fig bar" data-price="5">
+          <td><img src="./bilder/figbar.png" class="item-img">Fig bar</td>
+          <td>5kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Date bar" data-price="5">
+          <td><img src="./bilder/datebar.jpg" class="item-img">Date bar</td>
+          <td>5kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Date maamoul" data-price="3">
+          <td><img src="./bilder/tamer.jpeg" class="item-img">Date maamoul</td>
+          <td>3kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Dark chocolate" data-price="5">
+          <td><img src="./bilder/saida.png" class="item-img">Dark chocolate</td>
+          <td>5kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Forever" data-price="5">
+          <td><img src="./bilder/saida1.png" class="item-img">Forever</td>
+          <td>5kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Sesame plus" data-price="5">
+          <td><img src="./bilder/sesame.jpg" class="item-img">Sesame plus</td>
+          <td>5kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
 
   <!-- DRYCK -->
-  <div class="section">
-    <h2>Dryck</h2>
-    <table>
-      <tr class="clickable" data-name="Festis" data-price="15">
-        <td><img src="./bilder/festis.jpg" class="item-img">Festis</td>
-        <td>15kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Aqua d´or" data-price="15">
-        <td><img src="./bilder/aquador.jpg" class="item-img">Aqua d´or</td>
-        <td>15kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Mer" data-price="10">
-        <td><img src="./bilder/mer.png" class="item-img">Mer</td>
-        <td>10kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Premier" data-price="10">
-        <td><img src="./bilder/citronlime.jpg" class="item-img">Premier</td>
-        <td>10kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Palestine Coke" data-price="10">
-        <td><img src="./bilder/palestine.webp" class="item-img">Palestine Coke</td>
-        <td>10kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Ice Tea" data-price="10">
-        <td><img src="https://example.com/images/ice_tea.jpg" class="item-img">Ice Tea</td>
-        <td>10kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Mahmood Coffee" data-price="5">
-        <td><img src="./bilder/mahmoodcoffe.webp" class="item-img">Mahmood Coffee</td>
-        <td>5kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Multivitamin" data-price="15">
-        <td><img src="./bilder/multi.avif" class="item-img">Multivitamin</td>
-        <td>15kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-    </table>
+  <div class="tab-content" id="dryck">
+
+    <div class="section">
+      <h2>Dryck</h2>
+      <table>
+        <tr class="clickable" data-name="Festis" data-price="15">
+          <td><img src="./bilder/festis.jpg" class="item-img">Festis</td>
+          <td>15kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Aqua d´or" data-price="15">
+          <td><img src="./bilder/aquador.jpg" class="item-img">Aqua d´or</td>
+          <td>15kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Mer" data-price="10">
+          <td><img src="./bilder/mer.png" class="item-img">Mer</td>
+          <td>10kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Premier" data-price="10">
+          <td><img src="./bilder/citronlime.jpg" class="item-img">Premier</td>
+          <td>10kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Palestine Coke" data-price="10">
+          <td><img src="./bilder/palestine.webp" class="item-img">Palestine Coke</td>
+          <td>10kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Ice Tea" data-price="10">
+          <td><img src="https://example.com/images/ice_tea.jpg" class="item-img">Ice Tea</td>
+          <td>10kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Mahmood Coffee" data-price="5">
+          <td><img src="./bilder/mahmoodcoffe.webp" class="item-img">Mahmood Coffee</td>
+          <td>5kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Multivitamin" data-price="15">
+          <td><img src="./bilder/multi.avif" class="item-img">Multivitamin</td>
+          <td>15kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
 
   <!-- FRUKT -->
-  <div class="section">
-    <h2>Frukt</h2>
-    <table>
-      <tr class="clickable" data-name="Kiwi" data-price="3">
-        <td><img src="./bilder/kiwi.jpeg" class="item-img">Kiwi</td>
-        <td>3kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Plommon" data-price="3">
-        <td><img src="./bilder/741812_1.webp" class="item-img">Plommon</td>
-        <td>3kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Äpple" data-price="6">
-        <td><img src="./bilder/apple.jpeg" class="item-img">Äpple</td>
-        <td>6kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Apelsin" data-price="6">
-        <td><img src="./bilder/apelsin.jpeg" class="item-img">Apelsin</td>
-        <td>6kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-    </table>
+  <div class="tab-content" id="frukt">
+
+    <div class="section">
+      <h2>Frukt</h2>
+      <table>
+        <tr class="clickable" data-name="Kiwi" data-price="3">
+          <td><img src="./bilder/kiwi.jpeg" class="item-img">Kiwi</td>
+          <td>3kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Plommon" data-price="3">
+          <td><img src="./bilder/741812_1.webp" class="item-img">Plommon</td>
+          <td>3kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Äpple" data-price="6">
+          <td><img src="./bilder/apple.jpeg" class="item-img">Äpple</td>
+          <td>6kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Apelsin" data-price="6">
+          <td><img src="./bilder/apelsin.jpeg" class="item-img">Apelsin</td>
+          <td>6kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
 
   <!-- CHOKLAD -->
-  <div class="section">
-    <h2>Choklad</h2>
-    <table>
-      <tr class="clickable" data-name="Kex" data-price="8">
-        <td><img src="./bilder/kex.jpg" class="item-img">Kex</td>
-        <td>8kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Biscuits" data-price="8">
-        <td><img src="./bilder/biscuits.webp" class="item-img">Biscuits</td>
-        <td>8kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Peanuts" data-price="8">
-        <td><img src="./bilder/penuts.jpg" class="item-img">Peanuts</td>
-        <td>8kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Unica" data-price="8">
-        <td><img src="./bilder/unice.webp" class="item-img">Unica</td>
-        <td>8kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Balconi choklad" data-price="5">
-        <td><img src="./bilder/mixmax.webp" class="item-img">Balconi choklad</td>
-        <td>5kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-    </table>
+  <div class="tab-content" id="choklad">
+
+    <div class="section">
+      <h2>Choklad</h2>
+      <table>
+        <tr class="clickable" data-name="Kex" data-price="8">
+          <td><img src="./bilder/kex.jpg" class="item-img">Kex</td>
+          <td>8kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Biscuits" data-price="8">
+          <td><img src="./bilder/biscuits.webp" class="item-img">Biscuits</td>
+          <td>8kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Peanuts" data-price="8">
+          <td><img src="./bilder/penuts.jpg" class="item-img">Peanuts</td>
+          <td>8kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Unica" data-price="8">
+          <td><img src="./bilder/unice.webp" class="item-img">Unica</td>
+          <td>8kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Balconi choklad" data-price="5">
+          <td><img src="./bilder/mixmax.webp" class="item-img">Balconi choklad</td>
+          <td>5kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
 
   <!-- GODIS -->
-  <div class="section">
-    <h2>Godis</h2>
-    <table>
-      <tr class="clickable" data-name="Bebetto påsar" data-price="10">
-        <td><img src="./bilder/bebeto.webp" class="item-img">Bebetto påsar</td>
-        <td>10kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Sur Smultron" data-price="4">
-        <td><img src="./bilder/stanger.webp" class="item-img">Sur Smultron</td>
-        <td>4kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-    </table>
+  <div class="tab-content" id="godis">
+
+    <div class="section">
+      <h2>Godis</h2>
+      <table>
+        <tr class="clickable" data-name="Bebetto påsar" data-price="10">
+          <td><img src="./bilder/bebeto.webp" class="item-img">Bebetto påsar</td>
+          <td>10kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Sur Smultron" data-price="4">
+          <td><img src="./bilder/stanger.webp" class="item-img">Sur Smultron</td>
+          <td>4kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
 
   <!-- FRYS -->
-  <div class="section">
-    <h2>Frys</h2>
-    <table>
-      <tr class="clickable" data-name="Glass" data-price="10">
-        <td><img src="./bilder/glass.png" class="item-img">Glass</td>
-        <td>10kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="clickable" data-name="Billys Pizza" data-price="15">
-        <td><img src="https://d1ax460061ulao.cloudfront.net/1000x1000/f/d/fd314ceb7c6e67ea13995a0485c5fbdd.jpg"
-            class="item-img">Billys Pizza</td>
-        <td>15kr</td>
-        <td>
-          <div class="qty-controls">
-            <button class="qty-btn decrement" disabled>–</button>
-            <div class="quantity-display">0</div>
-            <button class="qty-btn increment">+</button>
-          </div>
-        </td>
-      </tr>
-    </table>
+  <div class="tab-content" id="frys">
+    <div class="section">
+      <h2>Frys</h2>
+      <table>
+        <tr class="clickable" data-name="Glass" data-price="10">
+          <td><img src="./bilder/glass.png" class="item-img">Glass</td>
+          <td>10kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Billys Pizza" data-price="15">
+          <td><img src="https://d1ax460061ulao.cloudfront.net/1000x1000/f/d/fd314ceb7c6e67ea13995a0485c5fbdd.jpg"
+              class="item-img">Billys Pizza</td>
+          <td>15kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
 
   <!-- TOTAL & SUMMARY -->
@@ -695,68 +766,90 @@
 
   <!-- JAVASCRIPT -->
   <script>
-  // Script for incrementing/decrementing quantities and updating total & summary
-  document.querySelectorAll('.clickable').forEach(row => {
-    const decrementBtn = row.querySelector('button.decrement');
-    const incrementBtn = row.querySelector('button.increment');
-    const qtyDisplay = row.querySelector('.quantity-display');
-    const price = Number(row.dataset.price);
-    const name = row.dataset.name;
-    let quantity = 0;
+    // Script for incrementing/decrementing quantities and updating total & summary
+    document.querySelectorAll('.clickable').forEach(row => {
+      const decrementBtn = row.querySelector('button.decrement');
+      const incrementBtn = row.querySelector('button.increment');
+      const qtyDisplay = row.querySelector('.quantity-display');
+      const price = Number(row.dataset.price);
+      const name = row.dataset.name;
+      let quantity = 0;
 
-    function updateQtyDisplay() {
-      qtyDisplay.textContent = quantity;
-      decrementBtn.disabled = quantity <= 0;
-    }
+      function updateQtyDisplay() {
+        qtyDisplay.textContent = quantity;
+        decrementBtn.disabled = quantity <= 0;
+      }
 
-    // ✅ Event Listeners - only once per element
-    incrementBtn.addEventListener('click', () => {
-      quantity++;
-      updateQtyDisplay();
-      updateTotalAndSummary();
-    });
-
-    decrementBtn.addEventListener('click', () => {
-      if (quantity > 0) {
-        quantity--;
+      // ✅ Event Listeners - only once per element
+      incrementBtn.addEventListener('click', () => {
+        quantity++;
         updateQtyDisplay();
         updateTotalAndSummary();
-      }
+      });
+
+      decrementBtn.addEventListener('click', () => {
+        if (quantity > 0) {
+          quantity--;
+          updateQtyDisplay();
+          updateTotalAndSummary();
+        }
+      });
+
+      // Initialize quantity display
+      updateQtyDisplay();
     });
 
-    // Initialize quantity display
-    updateQtyDisplay();
-  });
+    // ✅ Total calculation and link update
+    function updateTotalAndSummary() {
+      const allRows = document.querySelectorAll('.clickable');
+      let total = 0;
+      let summaryLines = [];
 
-  // ✅ Total calculation and link update
-  function updateTotalAndSummary() {
-    const allRows = document.querySelectorAll('.clickable');
-    let total = 0;
-    let summaryLines = [];
+      allRows.forEach(r => {
+        const qty = Number(r.querySelector('.quantity-display').textContent);
+        const p = Number(r.dataset.price);
+        const n = r.dataset.name;
+        if (qty > 0) {
+          total += qty * p;
+          summaryLines.push(`${n} (${qty} x ${p}kr) = ${qty * p}kr`);
+        }
+      });
 
-    allRows.forEach(r => {
-      const qty = Number(r.querySelector('.quantity-display').textContent);
-      const p = Number(r.dataset.price);
-      const n = r.dataset.name;
-      if (qty > 0) {
-        total += qty * p;
-        summaryLines.push(`${n} (${qty} x ${p}kr) = ${qty * p}kr`);
+      document.getElementById('totalDisplay').textContent = `Totalt: ${total}kr`;
+      document.getElementById('summaryDisplay').textContent = summaryLines.join('\n') || 'Inga valda produkter.';
+
+      // ✅ Update the Swish link dynamically
+      const checkoutLink = document.getElementById('checkoutLink');
+      if (total > 0) {
+        checkoutLink.href = `https://app.swish.nu/1/p/sw/?sw=0700131605&amt=${total}&cur=SEK&msg=&src=qr`;
+      } else {
+        checkoutLink.href = `https://app.swish.nu/1/p/sw/?sw=0700131605&msg=&src=qr`;
       }
-    });
-
-    document.getElementById('totalDisplay').textContent = `Totalt: ${total}kr`;
-    document.getElementById('summaryDisplay').textContent = summaryLines.join('\n') || 'Inga valda produkter.';
-
-    // ✅ Update the Swish link dynamically
-    const checkoutLink = document.getElementById('checkoutLink');
-    if (total > 0) {
-      checkoutLink.href = `https://app.swish.nu/1/p/sw/?sw=0700131605&amt=${total}&cur=SEK&msg=&src=qr`;
-    } else {
-      checkoutLink.href = `https://app.swish.nu/1/p/sw/?sw=0700131605&msg=&src=qr`;
     }
-  }
-</script>
+
+    // Tabs logic
+    document.querySelectorAll('.tab-button').forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active from all buttons
+        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+        // Hide all tab contents
+        document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+
+        // Activate clicked button
+        button.classList.add('active');
+
+        // Show corresponding content
+        const tabId = button.dataset.tab;
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+
+    // Show the first tab by default
+    document.getElementById('chips').classList.add('active');
+
+  </script>
 
 </body>
+
 
 </html>
