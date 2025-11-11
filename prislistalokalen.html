@@ -226,9 +226,9 @@
     <div class="section">
       <h2>Erbjudande</h2>
       <table>
-        <tr class="clickable" data-name="2x Rustika Chips" data-price="25">
-          <td><img src="./bilder/rustika.avif" class="item-img">2x Rustika Chips</td>
-          <td>25kr (2 för 25)</td>
+        <tr class="clickable" data-price="1">
+          <td><img src="./bilder/sesame.jpg" class="item-img">Sesame plus</td>
+          <td>1kr</td>
           <td>
             <div class="qty-controls">
               <button class="qty-btn decrement" disabled>–</button>
@@ -238,9 +238,9 @@
           </td>
         </tr>
 
-        <tr class="clickable" data-name="3x Maamoul" data-price="8">
-          <td><img src="./bilder/tamer.jpeg" class="item-img">3x Date Maamoul</td>
-          <td>8kr (3 för 8)</td>
+        <tr class="clickable" data-price="3">
+          <td><img src="./bilder/creamcookies.webp class="item-img">Cookies</td>
+          <td>3kr</td>
           <td>
             <div class="qty-controls">
               <button class="qty-btn decrement" disabled>–</button>
@@ -250,9 +250,9 @@
           </td>
         </tr>
 
-        <tr class="clickable" data-name="Festis + Croissant" data-price="20">
-          <td><img src="./bilder/festis.jpg" class="item-img">Festis + Croissant</td>
-          <td>20kr (paketpris)</td>
+        <tr class="clickable" data-price="1">
+          <td><img src="./bilder/singel.jpeg" class="item-img">Små choklad</td>
+          <td>2 för 1kr</td>
           <td>
             <div class="qty-controls">
               <button class="qty-btn decrement" disabled>–</button>
@@ -262,9 +262,9 @@
           </td>
         </tr>
 
-        <tr class="clickable" data-name="Popcorn + Mer" data-price="20">
-          <td><img src="./bilder/mer.png" class="item-img">Popcorn + Mer</td>
-          <td>20kr</td>
+        <tr class="clickable" data-price="1">
+          <td><img src="./bilder/kokos.jpeg" class="item-img">Kokosbakelse</td>
+          <td>2 för 1kr</td>
           <td>
             <div class="qty-controls">
               <button class="qty-btn decrement" disabled>–</button>
@@ -505,6 +505,28 @@
             </div>
           </td>
         </tr>
+        <tr class="clickable" data-name="Smoked Paprika" data-price="10">
+          <td><img src="./bilder/smokedpap.jpeg" class="item-img">Smoked paprika</td>
+          <td>10kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="clickable" data-name="Chili mix" data-price="10">
+          <td><img src="./bilder/chilimix.jpeg" class="item-img">Chili mix</td>
+          <td>10kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
       </table>
     </div>
   </div>
@@ -595,6 +617,50 @@
         <tr class="clickable" data-name="Multivitamin" data-price="15">
           <td><img src="./bilder/multi.avif" class="item-img">Multivitamin</td>
           <td>15kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+         <tr class="clickable" data-name="Vimto" data-price="15">
+          <td><img src="./bilder/Vimto.jpg" class="item-img">Vimto</td>
+          <td>15kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+         <tr class="clickable" data-name="Powerade" data-price="15">
+          <td><img src="./bilder/power.png" class="item-img">Powerade</td>
+          <td>15kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+         <tr class="clickable" data-name="Caprisun" data-price="5">
+          <td><img src="./bilder/capri.png" class="item-img">Caprisun</td>
+          <td>5kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+         <tr class="clickable" data-name="Hall" data-price="5">
+          <td><img src="./bilder/hall.avif" class="item-img">Hallon- och blåbärsdryck</td>
+          <td>5kr</td>
           <td>
             <div class="qty-controls">
               <button class="qty-btn decrement" disabled>–</button>
@@ -823,7 +889,6 @@
 
   <!-- JAVASCRIPT -->
   <script>
-    // Script for incrementing/decrementing quantities and updating total & summary
     document.querySelectorAll('.clickable').forEach(row => {
       const decrementBtn = row.querySelector('button.decrement');
       const incrementBtn = row.querySelector('button.increment');
@@ -837,7 +902,6 @@
         decrementBtn.disabled = quantity <= 0;
       }
 
-      // ✅ Event Listeners - only once per element
       incrementBtn.addEventListener('click', () => {
         quantity++;
         updateQtyDisplay();
@@ -852,11 +916,9 @@
         }
       });
 
-      // Initialize quantity display
       updateQtyDisplay();
     });
 
-    // ✅ Total calculation and link update
     function updateTotalAndSummary() {
       const allRows = document.querySelectorAll('.clickable');
       let total = 0;
@@ -875,7 +937,6 @@
       document.getElementById('totalDisplay').textContent = `Totalt: ${total}kr`;
       document.getElementById('summaryDisplay').textContent = summaryLines.join('\n') || 'Inga valda produkter.';
 
-      // ✅ Update the Swish link dynamically
       const checkoutLink = document.getElementById('checkoutLink');
       if (total > 0) {
         checkoutLink.href = `https://app.swish.nu/1/p/sw/?sw=0700131605&amt=${total}&cur=SEK&msg=&src=qr`;
@@ -884,24 +945,18 @@
       }
     }
 
-    // Tabs logic
     document.querySelectorAll('.tab-button').forEach(button => {
       button.addEventListener('click', () => {
-        // Remove active from all buttons
         document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-        // Hide all tab contents
         document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
 
-        // Activate clicked button
         button.classList.add('active');
 
-        // Show corresponding content
         const tabId = button.dataset.tab;
         document.getElementById(tabId).classList.add('active');
       });
     });
 
-    // Show the first tab by default
     document.getElementById('erbjudande').classList.add('active');
 
   </script>
@@ -910,3 +965,4 @@
 
 
 </html>
+
