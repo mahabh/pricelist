@@ -211,13 +211,70 @@
 
   <!-- TABS NAVIGATION -->
   <div class="tabs">
-    <button class="tab-button active" data-tab="chips">Chips</button>
+    <button class="tab-button active" data-tab="erbjudande">Erbjudanden</button>
+    <button class="tab-button" data-tab="chips">Chips</button>
     <button class="tab-button" data-tab="snacks">Snacks</button>
     <button class="tab-button" data-tab="dryck">Dryck</button>
     <button class="tab-button" data-tab="frukt">Frukt</button>
     <button class="tab-button" data-tab="choklad">Choklad</button>
     <button class="tab-button" data-tab="godis">Godis</button>
     <button class="tab-button" data-tab="frys">Frys</button>
+  </div>
+
+  <!-- ERBJUDANDE -->
+  <div class="tab-content" id="erbjudande">
+    <div class="section">
+      <h2>Erbjudande</h2>
+      <table>
+        <tr class="clickable" data-name="2x Rustika Chips" data-price="25">
+          <td><img src="./bilder/rustika.avif" class="item-img">2x Rustika Chips</td>
+          <td>25kr (2 för 25)</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="clickable" data-name="3x Maamoul" data-price="8">
+          <td><img src="./bilder/tamer.jpeg" class="item-img">3x Date Maamoul</td>
+          <td>8kr (3 för 8)</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="clickable" data-name="Festis + Croissant" data-price="20">
+          <td><img src="./bilder/festis.jpg" class="item-img">Festis + Croissant</td>
+          <td>20kr (paketpris)</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="clickable" data-name="Popcorn + Mer" data-price="20">
+          <td><img src="./bilder/mer.png" class="item-img">Popcorn + Mer</td>
+          <td>20kr</td>
+          <td>
+            <div class="qty-controls">
+              <button class="qty-btn decrement" disabled>–</button>
+              <div class="quantity-display">0</div>
+              <button class="qty-btn increment">+</button>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
 
 
@@ -845,7 +902,7 @@
     });
 
     // Show the first tab by default
-    document.getElementById('chips').classList.add('active');
+    document.getElementById('erbjudande').classList.add('active');
 
   </script>
 
